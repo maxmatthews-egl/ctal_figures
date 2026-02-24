@@ -2,6 +2,8 @@ import pandas as pd
 
 total_risk_path = r"C:\\Users\\matthewsm\\OneDrive - Enstargroup\\ERM Risk Folder\\Group\\Model Risk Management\\CTAL\\2026\\2026 01 Update\\0. Data\\_sims\\5954 (exported by AP)\\One-Year Total Risk Sims.csv"
 num_sims = 51
+management_margin = 45_000_000
+enstar_effect = 127_266_997
 
 return_periods = [2,5,10,20,50,100,200,500]
 percentiles = [1/rp for rp in return_periods]
@@ -44,13 +46,30 @@ col_order = [ "Total Insurance Risk",
     "Total SCR"
 ]
 
-
 loss_table = loss_table.reindex(columns=col_order)
-loss_table= loss_table.T
+loss_table = loss_table.T
 
 print(loss_table)
 
+#Finding Insurance and RI Credit risk Buffer
+ins_and_credit = df['Total Credit Risk'] + df['Total Insurance Risk']
+print(ins_and_credit.quantile(0.05), management_margin, enstar_effect)
+ins_and_credit = ins_and_credit.quantile(0.05) + management_margin - enstar_effect
+ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_credit]})
+
+print(ins_and_credit)
+
+
 #Write to excel
 #table.to_excel('total_risk_table.xlsx', index = False)
-#corridor.to_excel('simulation_corridor_data.xlsx, index = False')
+#corridor.to_excel('simulation_corridor_data.xlsx', index = False)
+#ins_and_credit.to_excel('insurance_risk_buffer', index = False)
+
+
+##ALTERNATE EXPORT OPTION
+#with pd.ExcelWriter(output_file, engine="openpyxl", mode="a", if_sheet_exists="replace") as writer:
+#    table.to_excel(writer, sheet_name="total_risk_table", index=False)
+#    corridor.to_excel(writer, sheet_name="simulation_corridor", index=False)
+#    ins_and_credit.to_excel(writer, sheet_name="ins_and_credit", index=False)
+
 
