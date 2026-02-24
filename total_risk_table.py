@@ -53,11 +53,8 @@ print(loss_table)
 
 #Finding Insurance and RI Credit risk Buffer
 ins_and_credit = df['Total Credit Risk'] + df['Total Insurance Risk']
-print(ins_and_credit.quantile(0.05), management_margin, enstar_effect)
 ins_and_credit = ins_and_credit.quantile(0.05) + management_margin - enstar_effect
 ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_credit]})
-
-print(ins_and_credit)
 
 
 #Write to excel
