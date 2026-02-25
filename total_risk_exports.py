@@ -18,6 +18,7 @@ df = df.pivot(index='Sim', columns='Risk', values='Value')
 df = df.reset_index()  # brings back sim column
 
 #DF Can now be exported for plotting in AllRisk
+print(df.head(20))
 
 #Finding corridor for sims
 tot_sims = len(df)
@@ -58,9 +59,9 @@ ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_cred
 
 
 #Write to excel
-#table.to_excel('total_risk_table.xlsx', index = False)
-#corridor.to_excel('simulation_corridor_data.xlsx', index = False)
-#ins_and_credit.to_excel('insurance_risk_buffer', index = False)
+loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
+corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
+ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
 
 
 ##ALTERNATE EXPORT OPTION
