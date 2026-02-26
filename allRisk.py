@@ -32,10 +32,10 @@ mapping = pd.read_excel(
 # Define custom RGB colors for subrisks (adjust as needed)
 color_map = {
     'Premium Risk': 'rgb(155,160,56)',
-    'Insurance Risk': 'rgb(29,100,163)',
-    'Credit Risk': 'rgb(155,160,56)',
-    'Market Risk': 'rgb(117,28,37)',
-    'Operational Risk': 'rgb(98,128,127)'
+    'Insurance Risk': 'rgb(168,20,255)',
+    'Credit Risk': 'rgb(114,26,36)',
+    'Market Risk': 'rgb(0,0,100)',
+    'Operational Risk': 'rgb(0,0,255)'
 }
 
 # Create the chart with custom colors

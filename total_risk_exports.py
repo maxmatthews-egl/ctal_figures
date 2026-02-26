@@ -1,6 +1,6 @@
 import pandas as pd
 
-total_risk_path = r"C:\\Users\\matthewsm\\OneDrive - Enstargroup\\ERM Risk Folder\\Group\\Model Risk Management\\CTAL\\2026\\2026 01 Update\\0. Data\\_sims\\5954 (exported by AP)\\One-Year Total Risk Sims.csv"
+total_risk_path = r"C:\Users\matthewsm\OneDrive - Enstargroup\ERM Risk Folder\Group\Model Risk Management\CTAL\2026\2026 01 Update\0. Data\_sims\5954 (exported by AP)\One-Year Total Risk Sims.csv"
 num_sims = 51
 management_margin = 45_000_000
 enstar_effect = 127_266_997
@@ -18,7 +18,6 @@ df = df.pivot(index='Sim', columns='Risk', values='Value')
 df = df.reset_index()  # brings back sim column
 
 #DF Can now be exported for plotting in AllRisk
-print(df.head(20))
 
 #Finding corridor for sims
 tot_sims = len(df)
@@ -59,9 +58,9 @@ ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_cred
 
 
 #Write to excel
-loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
-corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
-ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
+#loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
+#corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
+#ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
 
 
 ##ALTERNATE EXPORT OPTION
