@@ -19,8 +19,10 @@ The formatting of figures 3-5 is best performed in excel, the purpose of this re
 ### 1.1 Manual Inputs
 
 This repository requires minimal manual inputs and the two key scripts here are `reserve_scenarios.py` and `total_risk_exports`. These two will require 'reserve_sim_path' and 'total_risk_path' to be updated. To do so simply left click on the csv containing the sims and click copy as path (or Ctrl+Shift+C) and then paste in place of the existing path.
+![Screenshot](documentation_figures/Figure6.png)
 
-In `total_risk_exports` the following variables have been left at the top of the script `management_margin`, `enstar_effect` and `num_sims`. These controls have been left in so that the insruance and credit risk buffer calculation can remain updated even when these move around and so that the size of the sim corridor can be easily adjusted for further analysis.
+In `total_risk_exports` the following variables have been left at the top of the script `management_margin`, `enstar_effect` and `num_sims`. These controls have been left in so that the insurance and credit risk buffer calculation can remain updated even when these move around and so that the size of the sim corridor can be easily adjusted for further analysis.
+![Screenshot](documentation_figures/Figure7.png)
 
 ### 1.2 Running the Code
 
