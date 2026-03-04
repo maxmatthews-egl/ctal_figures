@@ -1,8 +1,10 @@
 import pandas as pd 
 
+
+############################ MANUAL UPDATES ############################ 
 reserve_sim_path = r"C:\\Users\\matthewsm\\OneDrive - Enstargroup\\ERM Risk Folder\\Group\\Model Risk Management\\CTAL\\2026\\2026 01 Update\\0. Data\\_sims\\5954 (exported by AP)\\One-Year Reserve Risk by Class.csv"
 num_sims = 51
-
+######################################################################## 
 
 df = pd.read_csv(reserve_sim_path)
 #Finding corridor for sims

@@ -1,18 +1,18 @@
-# Documentation for the insurance_lens.py script
+# Documentation for CTAL repo
 
 ## 0. Outputs
 
 This file should output the following for the production of the RAF:
 
-Figure 1 (Total Risk Plot): ![Screenshot](Documentation Screenshots/Figure1.png)
-Figure 2 (Total Loss Table): ![Screenshot](Documentation Screenshots/Figure2.png)
-Figure 3 (Total Loss Corridor): ![Screenshot](Documentation Screenshots/Figure3.png)
-Figure 4 (Total Loss Boxes): ![Screenshot](Documentation Screenshots/Figure4.png)
-Figure 5 (Reserve Risk Boxes): ![Screenshot](Documentation Screenshots/Figure5.png)
+Figure 1 (Total Risk Plot): ![Screenshot](documentation_figures/Figure1.png)
+Figure 2 (Total Loss Table): ![Screenshot](documentation_figures/Figure2.png)
+Figure 3 (Total Loss Corridor): ![Screenshot](documentation_figures/Figure3.png)
+Figure 4 (Total Loss Boxes): ![Screenshot](documentation_figures/Figure4.png)
+Figure 5 (Reserve Risk Boxes): ![Screenshot](documentation_figures/Figure5.png)
 
 Data from figures 1-4 is output purely by running `allRisk.py` and data for figure 5 is output by running `reserve_scenarios`.
 
-The formatting of figures 3-5 is best performed in excel, the purpose of this repo is to accurately manupulate and quickly feed through the required data for these figures. 
+The formatting of figures 3-5 is best performed in excel, the purpose of this repo is to accurately manipulate and quickly feed through the required data for these figures. 
 
 ## 1. Data Requirements and Manual inputs
 
