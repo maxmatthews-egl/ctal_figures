@@ -1,9 +1,13 @@
 import pandas as pd
 
+
+
+############################ MANUAL UPDATES ############################ 
 total_risk_path = r"C:\Users\matthewsm\OneDrive - Enstargroup\ERM Risk Folder\Group\Model Risk Management\CTAL\2026\2026 01 Update\0. Data\_sims\5954 (exported by AP)\One-Year Total Risk Sims.csv"
 num_sims = 51
 management_margin = 45_000_000
 enstar_effect = 127_266_997
+######################################################################## 
 
 return_periods = [2,5,10,20,50,100,200,500]
 percentiles = [1/rp for rp in return_periods]
