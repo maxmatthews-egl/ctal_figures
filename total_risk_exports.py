@@ -5,8 +5,9 @@ import pandas as pd
 ############################ MANUAL UPDATES ############################ 
 total_risk_path = r"C:\Users\matthewsm\OneDrive - Enstargroup\ERM Risk Folder\Group\Model Risk Management\CTAL\2026\2026 01 Update\0. Data\_sims\5954 (exported by AP)\One-Year Total Risk Sims.csv"
 num_sims = 51
-management_margin = 45_000_000
+management_margin = 0
 enstar_effect = 127_266_997
+entity = 'egl_group'
 ######################################################################## 
 
 return_periods = [2,5,10,20,50,100,200,500]
@@ -15,7 +16,7 @@ percentiles = [1/rp for rp in return_periods]
 df = pd.read_csv(total_risk_path)
 
 #Removing non egl_group fields
-df = df.loc[(df['Entity'] == 'egl_group')]
+df = df.loc[(df['Entity'] == entity)]
 
 #Manipulating table for ease in excel
 df = df.pivot(index='Sim', columns='Risk', values='Value')
@@ -28,7 +29,9 @@ tot_sims = len(df)
 lower_bound = int(tot_sims*0.05 - num_sims//2 - 1)
 upper_bound = int(tot_sims*0.05 + num_sims//2)
 
-corridor = df[lower_bound:upper_bound]
+corridor = df.copy()
+corridor = corridor.sort_values(by = 'Total SCR')
+corridor = corridor[lower_bound:upper_bound]
 
 #Taking percentiles and ajusting cols
 loss_table = df.drop(columns=['Risk','Sim'], errors = 'ignore')
@@ -62,9 +65,9 @@ ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_cred
 
 
 #Write to excel
-#loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
-#corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
-#ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
+loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
+corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
+ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
 
 
 ##ALTERNATE EXPORT OPTION
