@@ -67,7 +67,8 @@ ins_and_credit = pd.DataFrame({'Insurance and Credit Risk Buffer': [ins_and_cred
 #Write to excel
 loss_table.to_excel('Outputs/total_risk_table.xlsx', index = False)
 corridor.to_excel('Outputs/simulation_corridor_data.xlsx', index = False)
-ins_and_credit.to_excel('Outputs/insurance_risk_buffer.xlsx', index = False)
+ins_and_credit.to_excel('Outputs/insurance_and_credit_risk_buffer.xlsx', index = False)
+df.to_excel('Outputs/sims.xlsx', index = False)
 
 
 ##ALTERNATE EXPORT OPTION
